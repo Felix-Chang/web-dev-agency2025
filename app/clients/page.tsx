@@ -13,6 +13,31 @@ const clients = [
     name: 'Client Name',
     description: 'Description of the client or project work done.',
   },
+  {
+    id: 2,
+    name: 'Client Name',
+    description: 'Description of the client or project work done.',
+  },
+  {
+    id: 3,
+    name: 'Client Name',
+    description: 'Description of the client or project work done.',
+  },
+  {
+    id: 4,
+    name: 'Client Name',
+    description: 'Description of the client or project work done.',
+  },
+  {
+    id: 5,
+    name: 'Client Name',
+    description: 'Description of the client or project work done.',
+  },
+  {
+    id: 6,
+    name: 'Client Name',
+    description: 'Description of the client or project work done.',
+  },
   // Add more clients here
 ];
 
