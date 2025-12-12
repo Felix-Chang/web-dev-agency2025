@@ -1,24 +1,6 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
-import { Button } from "@/components/ui/button"
-import {
-  Field,
-  FieldDescription,
-  FieldGroup,
-  FieldLabel,
-  FieldLegend,
-  FieldSeparator,
-  FieldSet,
-} from "@/components/ui/field"
-import { Input } from "@/components/ui/input"
-import {
-  Select,
-  SelectContent,
-  SelectItem,
-  SelectTrigger,
-  SelectValue,
-} from "@/components/ui/select"
-import { Textarea } from "@/components/ui/textarea"
+import ContactForm from '../components/contact-form';
 
 export const metadata: Metadata = {
   title: 'Contact Us',
@@ -44,61 +26,7 @@ export default function ContactUsPage() {
           Leave us your contact information.
         </p>
 
-        <form>
-        <FieldGroup>
-          <FieldSet>
-            <FieldGroup>
-              <Field>
-                <FieldLegend>
-                  First Name
-                </FieldLegend>
-                <Input
-                  id="checkout-7j9-card-name-43j"
-                  placeholder="First Name"
-                  required
-                />
-              </Field>
-              <Field>
-                <FieldLegend>
-                  Last Name
-                </FieldLegend>
-                <Input
-                  id="checkout-7j9-card-name-43j"
-                  placeholder="Last Name"
-                  required
-                />
-              </Field>
-              <Field>
-                <FieldLegend>
-                  Email
-                </FieldLegend>
-                <Input
-                  id="checkout-7j9-card-name-43j"
-                  placeholder="email"
-                  required
-                />
-              </Field>
-            </FieldGroup>
-          </FieldSet>
-          <FieldSet>
-            <FieldGroup>
-              <Field>
-                <FieldLabel htmlFor="checkout-7j9-optional-comments">
-                  Message
-                </FieldLabel>
-                <Textarea
-                  id="checkout-7j9-optional-comments"
-                  placeholder="Add any additional comments"
-                  className="resize-none"
-                />
-              </Field>
-            </FieldGroup>
-          </FieldSet>
-          <Field orientation="horizontal">
-            <Button type="submit" >Submit</Button>
-          </Field>
-        </FieldGroup>
-      </form>
+        <ContactForm />
       </div>
     </div>
   );
