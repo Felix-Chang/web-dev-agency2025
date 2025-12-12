@@ -68,16 +68,23 @@ export default function ContactUsPage() {
                   required
                 />
               </Field>
+              <Field>
+                <FieldLegend>
+                  Email
+                </FieldLegend>
+                <Input
+                  id="checkout-7j9-card-name-43j"
+                  placeholder="email"
+                  required
+                />
+              </Field>
             </FieldGroup>
-          </FieldSet>
-          <FieldSet>
-            <FieldLegend>Billing Address</FieldLegend>
           </FieldSet>
           <FieldSet>
             <FieldGroup>
               <Field>
                 <FieldLabel htmlFor="checkout-7j9-optional-comments">
-                  Comments
+                  Message
                 </FieldLabel>
                 <Textarea
                   id="checkout-7j9-optional-comments"
@@ -88,10 +95,7 @@ export default function ContactUsPage() {
             </FieldGroup>
           </FieldSet>
           <Field orientation="horizontal">
-            <Button type="submit">Submit</Button>
-            <Button variant="outline" type="button">
-              Cancel
-            </Button>
+            <Button type="submit" >Submit</Button>
           </Field>
         </FieldGroup>
       </form>
