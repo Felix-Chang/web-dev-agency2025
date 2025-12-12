@@ -1,10 +1,20 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
+import ClientCard from '../components/client-card';
 
 export const metadata: Metadata = {
   title: 'Our Clients',
   description: 'Meet our valued clients and partners',
 };
+
+const clients = [
+  {
+    id: 1,
+    name: 'Client Name',
+    description: 'Description of the client or project work done.',
+  },
+  // Add more clients here
+];
 
 export default function ClientsPage() {
   return (
@@ -26,15 +36,13 @@ export default function ClientsPage() {
         </p>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-          {/* Placeholder for client cards */}
-          <div className="bg-white dark:bg-zinc-900 p-6 rounded-lg border border-zinc-200 dark:border-zinc-800">
-            <h3 className="text-xl font-semibold mb-2 text-black dark:text-zinc-50">
-              Client Name
-            </h3>
-            <p className="text-zinc-600 dark:text-zinc-400">
-              Description of the client or project work done.
-            </p>
-          </div>
+          {clients.map((client) => (
+            <ClientCard
+              key={client.id}
+              name={client.name}
+              description={client.description}
+            />
+          ))}
         </div>
       </div>
     </div>
