@@ -14,7 +14,7 @@ export default function Navbar() {
       if (currentScrollY < lastScrollY || currentScrollY < 10) {
         // Scrolling up or at the top
         setIsVisible(true);
-      } else if (currentScrollY > lastScrollY && currentScrollY > 20) {
+      } else if (currentScrollY > lastScrollY && currentScrollY > 40) {
         // Scrolling down and past threshold
         setIsVisible(false);
       }
@@ -31,22 +31,25 @@ export default function Navbar() {
 
   return (
     <header
-      className={`sticky top-0 z-50 border-b bg-white/95 dark:bg-black/95 backdrop-blur-sm shadow-sm transition-transform duration-300 ${
+      className={`sticky top-0 z-50 bg-white/95 dark:bg-black/95 backdrop-blur-sm transition-transform duration-500 ${
         isVisible ? 'translate-y-0' : '-translate-y-full'
       }`}
     >
       <nav className="mx-auto flex max-w-5xl items-center justify-between px-6 py-4">
         {/* Logo / Brand */}
-        <Link href="/" className="text-lg font-semibold">
+        <Link href="/" className="text-xl font-bold">
           Felix Web Studio
         </Link>
 
         {/* Links */}
-        <div className="flex items-center gap-6 text-sm">
-          <Link href="/clients" className="hover:underline">
+        <div className="flex items-center gap-6 text-base">
+          <Link href="/clients" className="font-bold hover:underline">
             Clients
           </Link>
-          <Link href="/contact-us" className="hover:underline">
+          <Link
+            href="/contact-us"
+            className="font-bold rounded-full bg-foreground px-6 py-2 text-background transition-colors hover:bg-[#383838] hover:underline dark:hover:bg-[#ccc]"
+          >
             Contact Us
           </Link>
         </div>
