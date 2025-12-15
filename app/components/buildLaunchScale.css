@@ -116,3 +116,22 @@
   .anchor { width: 190px; height: 190px; }
   .icon { width: 170px; height: 170px; }
 }
+
+/* Rocket wrapper so we can rumble inner SVG without fighting launch transforms */
+.iconWrap {
+  position: absolute;
+  width: 200px;
+  height: 200px;
+  opacity: 0;              /* wrapper fades in/out */
+  transform: translateZ(0);
+  filter: drop-shadow(0 0 14px rgba(255,255,255,.22));
+}
+
+.rocketSvg {
+  position: absolute;
+  inset: 0;
+  width: 200px;
+  height: 200px;
+  opacity: 1;              /* IMPORTANT: not hidden like .icon */
+  overflow: visible;
+}

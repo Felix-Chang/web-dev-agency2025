@@ -1,5 +1,6 @@
 import Link from "next/link";
 import BuildLaunchScale from "./components/buildLaunchScale";
+import ServicesCarousel from "./components/services-carousel";
 
 export default function Home() {
   return (
@@ -56,6 +57,31 @@ export default function Home() {
               </div>
             </div>
           </div>
+        </div>
+      </div>
+
+      {/* Services Carousel */}
+      <div className="pb-12 px-6">
+        <div className="max-w-7xl mx-auto mb-8">
+          <div className="text-right pr-16">
+            <h2 className="text-4xl font-bold text-black dark:text-zinc-50 mb-4">
+              What We Do
+            </h2>
+            <p className="text-xl text-zinc-600 dark:text-zinc-400">
+              Our expertise across the stack
+            </p>
+          </div>
+        </div>
+        <ServicesCarousel />
+
+        {/* CTA Button */}
+        <div className="flex justify-center mt-12">
+          <Link
+            href="/services"
+            className="flex h-12 items-center font-bold justify-center rounded-full bg-foreground px-8 text-background transition-colors hover:bg-[#383838] dark:hover:bg-[#ccc]"
+          >
+            View All Services
+          </Link>
         </div>
       </div>
     </div>

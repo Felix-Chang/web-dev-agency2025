@@ -43,6 +43,9 @@ export default function Navbar() {
 
         {/* Links */}
         <div className="flex items-center gap-6 text-base">
+          <Link href="/services" className="font-bold hover:underline">
+            Services
+          </Link>
           <Link href="/clients" className="font-bold hover:underline">
             Clients
           </Link>
