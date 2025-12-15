@@ -43,7 +43,7 @@ const clients = [
 
 export default function ClientsPage() {
   return (
-    <div className="min-h-screen bg-zinc-50 dark:bg-black p-8">
+    <div className="min-h-screen bg-[#F8F8FF] dark:bg-[1B1B1B] p-8">
       <div className="max-w-6xl mx-auto">
         <Link
           href="/"
