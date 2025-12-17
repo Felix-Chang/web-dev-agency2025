@@ -1,5 +1,6 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
+import Image from 'next/image';
 import ClientCard from '../components/client-card';
 
 export const metadata: Metadata = {
@@ -105,6 +106,44 @@ export default function ClientsPage() {
             />
           ))}
         </div>
+
+        {/* Client Testimonial Section */}
+        <div className="mt-16 grid grid-cols-1 md:grid-cols-2 gap-8">
+          {/* Left Half - Testimonial Card */}
+          <div className="bg-gradient-to-br from-blue-100 to-indigo-100 dark:from-zinc-900 dark:to-zinc-800 rounded-lg p-8 border border-blue-200 dark:border-zinc-700">
+            <blockquote className="text-xl font-medium text-zinc-800 dark:text-zinc-100 mb-6 italic">
+              Working with Felix Web Studio transformed our online presence. They understood our vision and delivered a website that exceeded our expectations. Our customer engagement has increased significantly since launch.
+            </blockquote>
+            <div className="flex items-start gap-4">
+              <div className="w-16 h-16 bg-blue-500 rounded-full flex items-center justify-center text-white text-2xl font-bold flex-shrink-0">
+                JD
+              </div>
+              <div>
+                <p className="font-bold text-lg text-zinc-900 dark:text-zinc-50">
+                  Jane Doe
+                </p>
+                <p className="text-zinc-600 dark:text-zinc-400 font-semibold">
+                  CEO, TechStart Inc.
+                </p>
+                <p className="text-zinc-500 dark:text-zinc-500 text-sm mt-1">
+                  A SaaS platform helping small businesses streamline their operations
+                </p>
+              </div>
+            </div>
+          </div>
+
+          {/* Right Half - Communication Image */}
+          <div className="flex items-center justify-center">
+            <Image
+              src="/assets/communication.jpg"
+              alt="Communication"
+              width={600}
+              height={600}
+              className="rounded-lg object-cover w-full h-full"
+            />
+          </div>
+        </div>
+        
 
         {/* CTA Section */}
         <div className="mt-16 text-center">
