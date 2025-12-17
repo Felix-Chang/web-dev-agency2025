@@ -146,7 +146,7 @@ export default function ClientsPage() {
         
 
         {/* CTA Section */}
-        <div className="mt-16 text-center">
+        <div className="mt-16 pt-12 pb-16 text-center">
           <h2 className="text-3xl font-bold mb-4 text-black dark:text-zinc-50">
             Ready to Work Together?
           </h2>
