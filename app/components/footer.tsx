@@ -3,7 +3,7 @@ import Link from 'next/link';
 export default function Footer() {
   return (
     <footer className="bg-[#1B1B1B] text-[#F8F8FF] mt-auto">
-      <div className="max-w-6xl mx-auto px-8 py-12">
+      <div className="max-w-6xl mx-auto px-8 pt-16 pb-6">
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-8">
           {/* Company Info */}
           <div>
@@ -39,11 +39,11 @@ export default function Footer() {
           </div>
 
           {/* CTA */}
-          <div className="flex flex-col items-start md:items-end justify-center">
+          <div className="flex flex-col items-center">
             <h3 className="text-xl font-bold mb-4">Ready to Start?</h3>
             <Link
               href="/contact-us"
-              className="inline-block font-bold rounded-full bg-[#F8F8FF] px-6 py-3 text-[#383838] transition-colors hover:underline"
+              className="inline-block font-bold rounded-full bg-[#F8F8FF] px-6 py-3 mb-24 text-[#383838] transition-colors hover:underline"
             >
               Get In Touch
             </Link>
