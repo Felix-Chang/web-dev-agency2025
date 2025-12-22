@@ -1,43 +1,43 @@
-import type { Metadata } from 'next';
-import Link from 'next/link';
-import Image from 'next/image';
-import ClientCard from '../components/client-card';
+import type { Metadata } from "next";
+import Link from "next/link";
+import Image from "next/image";
+import ClientCard from "../components/client-card";
 
 export const metadata: Metadata = {
-  title: 'Our Clients',
-  description: 'Meet our valued clients and partners',
+  title: "Our Clients",
+  description: "Meet our valued clients and partners",
 };
 
 const clients = [
   {
     id: 1,
-    name: 'Client Name',
-    description: 'Description of the client or project work done.',
+    name: "Client Name",
+    description: "Description of the client or project work done.",
   },
   {
     id: 2,
-    name: 'Client Name',
-    description: 'Description of the client or project work done.',
+    name: "Client Name",
+    description: "Description of the client or project work done.",
   },
   {
     id: 3,
-    name: 'Client Name',
-    description: 'Description of the client or project work done.',
+    name: "Client Name",
+    description: "Description of the client or project work done.",
   },
   {
     id: 4,
-    name: 'Client Name',
-    description: 'Description of the client or project work done.',
+    name: "Client Name",
+    description: "Description of the client or project work done.",
   },
   {
     id: 5,
-    name: 'Client Name',
-    description: 'Description of the client or project work done.',
+    name: "Client Name",
+    description: "Description of the client or project work done.",
   },
   {
     id: 6,
-    name: 'Client Name',
-    description: 'Description of the client or project work done.',
+    name: "Client Name",
+    description: "Description of the client or project work done.",
   },
   // Add more clients here
 ];
@@ -67,31 +67,38 @@ export default function ClientsPage() {
             Who We Help
           </h2>
           <p className="text-lg text-zinc-600 dark:text-zinc-400 mb-6">
-            We work with startups, small businesses, and growing teams looking to build or improve their online presence. Whether you're launching something new or reworking an existing website, we're here to help you succeed.
+            We work with startups, small businesses, and growing teams looking
+            to build or improve their online presence. Whether you're launching
+            something new or reworking an existing website, we're here to help
+            you succeed.
           </p>
           <ul className="space-y-3">
             <li className="flex items-start">
               <span className="text-blue-500 mr-3 mt-1">✓</span>
               <span className="text-zinc-700 dark:text-zinc-300">
-                <strong>Early-stage startups</strong> ready to establish their digital foundation
+                <strong>Early-stage startups</strong> ready to establish their
+                digital foundation
               </span>
             </li>
             <li className="flex items-start">
               <span className="text-blue-500 mr-3 mt-1">✓</span>
               <span className="text-zinc-700 dark:text-zinc-300">
-                <strong>Local & service-based businesses</strong> looking to grow their customer base
+                <strong>Local & service-based businesses</strong> looking to
+                grow their customer base
               </span>
             </li>
             <li className="flex items-start">
               <span className="text-blue-500 mr-3 mt-1">✓</span>
               <span className="text-zinc-700 dark:text-zinc-300">
-                <strong>Online brands & creators</strong> building their unique presence
+                <strong>Online brands & creators</strong> building their unique
+                presence
               </span>
             </li>
             <li className="flex items-start">
               <span className="text-blue-500 mr-3 mt-1">✓</span>
               <span className="text-zinc-700 dark:text-zinc-300">
-                <strong>Businesses seeking rebranding</strong> or website redesigns to stay competitive
+                <strong>Businesses seeking rebranding</strong> or website
+                redesigns to stay competitive
               </span>
             </li>
           </ul>
@@ -112,7 +119,10 @@ export default function ClientsPage() {
           {/* Left Half - Testimonial Card */}
           <div className="bg-gradient-to-br from-blue-100 to-indigo-100 dark:from-zinc-900 dark:to-zinc-800 rounded-lg p-8 border border-blue-200 dark:border-zinc-700">
             <blockquote className="text-xl font-medium text-zinc-800 dark:text-zinc-100 mb-6 italic">
-              Working with Felix Web Studio transformed our online presence. They understood our vision and delivered a website that exceeded our expectations. Our customer engagement has increased significantly since launch.
+              Working with Felix Web Studio transformed our online presence.
+              They understood our vision and delivered a website that exceeded
+              our expectations. Our customer engagement has increased
+              significantly since launch.
             </blockquote>
             <div className="flex items-start gap-4">
               <div className="w-16 h-16 bg-blue-500 rounded-full flex items-center justify-center text-white text-2xl font-bold flex-shrink-0">
@@ -126,7 +136,8 @@ export default function ClientsPage() {
                   CEO, TechStart Inc.
                 </p>
                 <p className="text-zinc-500 dark:text-zinc-500 text-sm mt-1">
-                  A SaaS platform helping small businesses streamline their operations
+                  A SaaS platform helping small businesses streamline their
+                  operations
                 </p>
               </div>
             </div>
@@ -143,7 +154,6 @@ export default function ClientsPage() {
             />
           </div>
         </div>
-        
 
         {/* CTA Section */}
         <div className="mt-16 pt-12 pb-16 text-center">
