@@ -1,4 +1,4 @@
-'use client';
+"use client";
 
 import Link from "next/link";
 import { useEffect, useState } from "react";
@@ -22,17 +22,17 @@ export default function Navbar() {
       setLastScrollY(currentScrollY);
     };
 
-    window.addEventListener('scroll', handleScroll, { passive: true });
+    window.addEventListener("scroll", handleScroll, { passive: true });
 
     return () => {
-      window.removeEventListener('scroll', handleScroll);
+      window.removeEventListener("scroll", handleScroll);
     };
   }, [lastScrollY]);
 
   return (
     <header
       className={`sticky top-0 z-50 bg-[#F8F8FF]/60 dark:bg-[1B1B1B]/60 backdrop-blur-md transition-transform duration-500 ${
-        isVisible ? 'translate-y-0' : '-translate-y-full'
+        isVisible ? "translate-y-0" : "-translate-y-full"
       }`}
     >
       <nav className="mx-auto flex max-w-5xl items-center justify-between px-6 py-4">
@@ -48,6 +48,9 @@ export default function Navbar() {
           </Link>
           <Link href="/clients" className="font-bold hover:underline">
             Clients
+          </Link>
+          <Link href="/about" className="font-bold hover:underline">
+            About
           </Link>
           <Link
             href="/contact-us"
