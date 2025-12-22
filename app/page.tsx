@@ -20,24 +20,25 @@ export default function Home() {
         <div className="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-white/50 dark:to-black/50 z-0"></div>
 
         {/* Content */}
-        <div className="relative z-10 flex flex-col items-center gap-8 text-center max-w-3xl">
+        <div className="relative z-10 flex flex-col items-center gap-8 text-center max-w-4xl">
           <h1 className="text-6xl font-bold tracking-tight text-black dark:text-zinc-50">
-            Welcome to "Our Agency"
+            Building websites that help businesses grow
           </h1>
-          <p className="max-w-2xl text-xl leading-8 text-zinc-800 dark:text-zinc-400">
-            We help businesses grow with high-performing websites.
+          <p className="max-w-2xl text-2xl leading-8 text-zinc-800 dark:text-zinc-400">
+            High-performing websites and full-stack web apps designed to look
+            great, load fast, and convert
           </p>
         </div>
         <Link
-          className="relative z-10 flex h-12 items-center font-bold justify-center rounded-full bg-foreground px-8 text-background transition-colors hover:bg-[#383838] dark:hover:bg-[#ccc]"
+          className="relative z-10 flex h-12 items-center font-bold justify-center rounded-full bg-foreground px-8 text-background transition-colors hover:underline hover:bg-[#383838] dark:hover:bg-[#ccc]"
           href="/clients"
         >
-          View Our Clients
+          View Our Work
         </Link>
       </div>
 
       {/* Asymmetric Content */}
-      <div className="min-h-screen px-6 py-20 lg:px-16">
+      <div className="px-6 py-20 lg:px-16">
         <div className="mx-auto max-w-7xl">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-center">
             {/* Left: Text */}
@@ -45,15 +46,21 @@ export default function Home() {
               <h2 className="text-4xl lg:text-5xl font-bold text-black dark:text-zinc-50 leading-tight">
                 Everything you need to launch and scale online.
               </h2>
-              <p className="text-xl leading-8 text-zinc-600 dark:text-zinc-400">
-                From modern frontends to secure backends and database integration, we build systems that support real business growth.
+              <p className="text-xl leading-8 text-zinc-800 dark:text-zinc-400">
+                From modern frontends to secure backends and database
+                integration, we build systems that support real business growth.
+              </p>
+              <p className="text-xl leading-8 text-zinc-800 dark:text-zinc-400">
+                We don't just build websites. We build the systems behind them.
+                Each service works together to create fast, scalable, and
+                reliable digital products.
               </p>
             </div>
 
             {/* Right: Graph Animation */}
             <div className="flex items-center justify-center">
               <div className="w-full h-96 rounded-2xl overflow-hidden bg-gradient-to-br from-zinc-100 to-zinc-200 dark:from-zinc-800 dark:to-zinc-900">
-                <BuildLaunchScale/>
+                <BuildLaunchScale />
               </div>
             </div>
           </div>
@@ -67,7 +74,7 @@ export default function Home() {
             <h2 className="text-4xl font-bold text-black dark:text-zinc-50 mb-4">
               What We Do
             </h2>
-            <p className="text-xl text-zinc-600 dark:text-zinc-400">
+            <p className="text-xl text-zinc-800 dark:text-zinc-400">
               Our expertise across the stack
             </p>
           </div>
@@ -78,7 +85,7 @@ export default function Home() {
         <div className="flex justify-center mt-12">
           <Link
             href="/services"
-            className="flex h-12 items-center font-bold justify-center rounded-full bg-foreground px-8 text-background transition-colors hover:bg-[#383838] dark:hover:bg-[#ccc]"
+            className="flex h-12 items-center font-bold justify-center rounded-full bg-foreground px-8 text-background transition-colors hover:bg-[#383838] hover:underline dark:hover:bg-[#ccc]"
           >
             View All Services
           </Link>

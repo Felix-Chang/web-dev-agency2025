@@ -1,4 +1,4 @@
-import Link from 'next/link';
+import Link from "next/link";
 
 export default function Footer() {
   return (
@@ -9,7 +9,7 @@ export default function Footer() {
           <div>
             <h3 className="text-xl font-bold mb-4">Felix Web Studio</h3>
             <p className="text-[#F8F8FF]/80">
-              Building digital experiences that help your business grow.
+              Building websites that help businesses grow.
             </p>
           </div>
 
@@ -18,7 +18,7 @@ export default function Footer() {
             <h3 className="text-xl font-bold mb-4">Contact Us</h3>
             <div className="space-y-2 text-[#F8F8FF]/80">
               <p>
-                <span className="font-semibold">Email:</span>{' '}
+                <span className="font-semibold">Email:</span>{" "}
                 <a
                   href="mailto:hello@felixwebstudio.com"
                   className="hover:text-white transition-colors"
@@ -27,7 +27,7 @@ export default function Footer() {
                 </a>
               </p>
               <p>
-                <span className="font-semibold">Phone:</span>{' '}
+                <span className="font-semibold">Phone:</span>{" "}
                 <a
                   href="tel:+1234567890"
                   className="hover:text-white transition-colors"
@@ -52,7 +52,10 @@ export default function Footer() {
 
         {/* Bottom Bar */}
         <div className="border-t border-[#F8F8FF]/20 pt-6 text-center text-[#F8F8FF]/60 text-sm">
-          <p>&copy; {new Date().getFullYear()} Felix Web Studio. All rights reserved.</p>
+          <p>
+            &copy; {new Date().getFullYear()} Felix Web Studio. All rights
+            reserved.
+          </p>
         </div>
       </div>
     </footer>
