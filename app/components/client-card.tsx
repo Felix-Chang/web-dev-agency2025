@@ -1,4 +1,4 @@
-import Image from 'next/image';
+import Image from "next/image";
 
 interface ClientCardProps {
   name: string;
@@ -7,15 +7,20 @@ interface ClientCardProps {
   URL?: string;
 }
 
-export default function ClientCard({ name, description, image, URL }: ClientCardProps) {
+export default function ClientCard({
+  name,
+  description,
+  image,
+  URL,
+}: ClientCardProps) {
   return (
     <div className="bg-white dark:bg-zinc-900 p-6 rounded-lg border border-zinc-200 dark:border-zinc-800">
       {image && (
-        <div className="relative mb-4">
+        <div className="group relative mb-4 overflow-hidden rounded-md bg-zinc-200 dark:bg-zinc-800 flex items-center justify-center h-48">
           <img
             src={image}
             alt={name}
-            className="w-full h-48 object-cover rounded-md"
+            className="w-full h-full object-contain rounded-md transition-transform duration-300 ease-in-out group-hover:scale-110"
           />
           {URL && (
             <a
@@ -38,9 +43,7 @@ export default function ClientCard({ name, description, image, URL }: ClientCard
       <h3 className="text-xl font-semibold mb-2 text-black dark:text-zinc-50">
         {name}
       </h3>
-      <p className="text-zinc-600 dark:text-zinc-400">
-        {description}
-      </p>
+      <p className="text-zinc-600 dark:text-zinc-400">{description}</p>
     </div>
   );
 }
