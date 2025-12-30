@@ -11,8 +11,10 @@ export const metadata: Metadata = {
 const clients = [
   {
     id: 1,
-    name: "Client Name",
-    description: "Description of the client or project work done.",
+    name: "Hurts So Good Tattoos",
+    description: "Tattoo Studio in Denton & Austin, TX",
+    image: "/assets/tattoo.png",
+    URL: "https://www.hurtssogoodtattoo.com/",
   },
   {
     id: 2,
@@ -110,6 +112,8 @@ export default function ClientsPage() {
               key={client.id}
               name={client.name}
               description={client.description}
+              image={client.image}
+              URL={client.URL}
             />
           ))}
         </div>

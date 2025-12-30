@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import Image from "next/image";
 
 export const metadata: Metadata = {
   title: "About",
@@ -22,10 +23,10 @@ export default function About() {
         </h1>
 
         {/* Main Content Section */}
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 mb-12">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 my-12">
           {/* Left: Image */}
-          <div className="flex items-center justify-center">
-            <div className="w-full max-w-md aspect-square rounded-lg overflow-hidden bg-gradient-to-br from-zinc-300 to-zinc-400 dark:from-zinc-700 dark:to-zinc-800 flex items-center justify-center">
+          <div className="flex justify-left">
+            <div className="w-full max-w-md aspect-square justify-center rounded-lg overflow-hidden bg-gradient-to-br from-zinc-300 to-zinc-400 dark:from-zinc-700 dark:to-zinc-800 flex items-center justify-center">
               {/* Placeholder for person image */}
               <span className="text-zinc-500 dark:text-zinc-400 text-lg">
                 Your Photo Here
@@ -35,24 +36,35 @@ export default function About() {
 
           {/* Right: Text Content */}
           <div className="flex flex-col gap-6">
-            <p className="text-lg text-zinc-600 dark:text-zinc-400">
+            <p className="text-xl text-zinc-600 dark:text-zinc-400">
               Hi, I'm Michael, the founder of "Our Agency".
             </p>
-            <p className="text-lg text-zinc-700 dark:text-zinc-300">
-              With over 7 years of experience in web development and design,
-              I've helped many businesses transform their online presence.
+            <p className="text-xl text-zinc-700 dark:text-zinc-300">
+              With over 7 years of experience in professional web development
+              and design, I've helped many businesses transform their online
+              presence.
             </p>
-            <p className="text-lg text-zinc-700 dark:text-zinc-300">
+            <p className="text-xl text-zinc-700 dark:text-zinc-300">
               I started this agency because I believe every business deserves a
               website that not only looks great but actually drives results.
               Whether it's a sleek landing page or a complex full-stack
               application, I'm passionate about building digital products that
               make a difference.
             </p>
-            <p className="text-lg text-zinc-700 dark:text-zinc-300">
-              When I'm not coding, you can find me [hobby/interest], exploring
-              new technologies, or working with clients to bring their visions
-              to life.
+            <p className="text-xl text-zinc-700 dark:text-zinc-300">
+              I take a business-first approach to every project. That means
+              understanding your goals, your customers, and what success
+              actually looks like—not just writing code. I prioritize clear
+              communication, fast feedback, and transparency throughout the
+              process, and I'm always available to discuss ideas, updates, or
+              changes.
+            </p>
+            <p className="text-xl text-zinc-700 font-bold">Education</p>
+            <p className="text-xl text-zinc-700 dark:text-zinc-300">
+              B.S. in Computer Science | University of Southern California
+            </p>
+            <p className="text-xl text-zinc-700 dark:text-zinc-300">
+              M.S. in Artificial Intelligence | University of Texas at Austin
             </p>
           </div>
         </div>
@@ -71,6 +83,15 @@ export default function About() {
                 Creating beautiful, responsive interfaces with React, Next.js,
                 and modern CSS frameworks.
               </p>
+              <div className="mt-4">
+                <Image
+                  src="/assets/undraw_programming_j1zw.png"
+                  alt="Programming illustration"
+                  width={300}
+                  height={300}
+                  className="w-full h-auto"
+                />
+              </div>
             </div>
             <div className="flex flex-col gap-3">
               <h3 className="text-xl font-bold text-black dark:text-zinc-50">
@@ -80,6 +101,15 @@ export default function About() {
                 Building robust APIs and server infrastructure that scales with
                 your business.
               </p>
+              <div className="mt-4">
+                <Image
+                  src="/assets/undraw_add-post_prex.png"
+                  alt="Add post illustration"
+                  width={300}
+                  height={300}
+                  className="w-full h-auto"
+                />
+              </div>
             </div>
             <div className="flex flex-col gap-3">
               <h3 className="text-xl font-bold text-black dark:text-zinc-50">
@@ -88,6 +118,15 @@ export default function About() {
               <p className="text-zinc-600 dark:text-zinc-400">
                 End-to-end development from concept to deployment and beyond.
               </p>
+              <div className="mt-4">
+                <Image
+                  src="/assets/undraw_check-boxes_x5fg.png"
+                  alt="Check boxes illustration"
+                  width={300}
+                  height={300}
+                  className="w-full h-auto"
+                />
+              </div>
             </div>
           </div>
         </div>

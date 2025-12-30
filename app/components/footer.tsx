@@ -43,7 +43,7 @@ export default function Footer() {
             <h3 className="text-xl font-bold mb-4">Ready to Start?</h3>
             <Link
               href="/contact-us"
-              className="inline-block font-bold rounded-full bg-[#F8F8FF] px-6 py-3 mb-24 text-[#383838] transition-colors hover:underline"
+              className="inline-block font-bold rounded-full px-6 py-2 text-foreground transition-colors bg-background hover:underline"
             >
               Get In Touch
             </Link>

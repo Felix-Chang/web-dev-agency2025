@@ -13,7 +13,7 @@ export default function Home() {
           loop
           muted
           playsInline
-          className="absolute top-0 left-0 w-full h-full object-cover opacity-50 dark:opacity-40 z-0"
+          className="absolute top-0 left-0 w-full h-full object-cover opacity-60 dark:opacity-40 z-0"
         >
           <source src="/assets/hero_animation.mp4" type="video/mp4" />
         </video>
