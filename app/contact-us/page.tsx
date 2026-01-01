@@ -1,10 +1,10 @@
-import type { Metadata } from 'next';
-import Link from 'next/link';
-import ContactForm from '../components/contact-form';
+import type { Metadata } from "next";
+import Link from "next/link";
+import ContactForm from "../components/ContactForm";
 
 export const metadata: Metadata = {
-  title: 'Contact Us',
-  description: 'Leave us your contact information',
+  title: "Contact Us",
+  description: "Leave us your contact information",
 };
 
 export default function ContactUsPage() {

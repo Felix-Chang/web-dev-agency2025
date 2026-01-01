@@ -13,22 +13,22 @@ const services = [
     description:
       "Modern, responsive interfaces designed for usability, performance, and a consistent experience across devices.",
     features: [
-      "React, Next.js, and modern frameworks",
+      "Modern frameworks",
       "Responsive design for all devices",
       "Performance optimization",
       "Accessibility compliance",
     ],
   },
   {
-    title: "Backend Development",
+    title: "Backend Integration",
     subtitle: "Reliable systems behind the scenes.",
     description:
-      "Secure backends and APIs that power your product, handle traffic, and scale as your business grows.",
+      "Setting up the services that power your website, including databases, authentication, analytics, and third-party APIs.",
     features: [
-      "RESTful and GraphQL APIs",
-      "Database design and optimization",
-      "Authentication and security",
-      "Cloud infrastructure",
+      "External service integrations",
+      "Data management and storage",
+      "Security and user authentication",
+      "Deployment and infrastructure setup",
     ],
   },
   {
@@ -69,7 +69,7 @@ export default function ServicesPage() {
           {services.map((service, index) => (
             <div
               key={index}
-              className="bg-white dark:bg-zinc-900 rounded-2xl p-8 border border-zinc-200 dark:border-zinc-800"
+              className="bg-white dark:bg-zinc-900 rounded-2xl p-8 border border-zinc-200 dark:border-zinc-800 flex flex-col"
             >
               <h2 className="text-2xl font-bold text-black dark:text-zinc-50 mb-2">
                 {service.title}
@@ -77,10 +77,10 @@ export default function ServicesPage() {
               <p className="text-lg font-semibold text-zinc-600 dark:text-zinc-400 mb-4">
                 {service.subtitle}
               </p>
-              <p className="text-base leading-7 text-zinc-600 dark:text-zinc-400 mb-6">
+              <p className="text-base leading-7 text-zinc-600 dark:text-zinc-400 mb-6 flex-grow">
                 {service.description}
               </p>
-              <ul className="space-y-2">
+              <ul className="space-y-2 mt-auto">
                 {service.features.map((feature, idx) => (
                   <li
                     key={idx}

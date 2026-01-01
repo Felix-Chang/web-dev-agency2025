@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import Image from "next/image";
-import ClientCard from "../components/client-card";
+import ClientCard from "../components/ClientCard";
 
 export const metadata: Metadata = {
   title: "Our Clients",

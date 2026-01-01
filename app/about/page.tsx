@@ -85,7 +85,7 @@ export default function About() {
               </p>
               <div className="mt-4">
                 <Image
-                  src="/assets/undraw_programming_j1zw.png"
+                  src="/assets/undraw_add-post_prex.png"
                   alt="Programming illustration"
                   width={300}
                   height={300}
@@ -103,7 +103,7 @@ export default function About() {
               </p>
               <div className="mt-4">
                 <Image
-                  src="/assets/undraw_add-post_prex.png"
+                  src="/assets/undraw_programming_j1zw.png"
                   alt="Add post illustration"
                   width={300}
                   height={300}

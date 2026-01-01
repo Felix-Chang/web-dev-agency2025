@@ -14,14 +14,16 @@ export default function ClientCard({
   URL,
 }: ClientCardProps) {
   return (
-    <div className="bg-white dark:bg-zinc-900 p-6 rounded-lg border border-zinc-200 dark:border-zinc-800">
+    <div className="bg-white dark:bg-zinc-900 p-6 rounded-lg border border-zinc-100 dark:border-zinc-800">
       {image && (
-        <div className="group relative mb-4 overflow-hidden rounded-md bg-zinc-200 dark:bg-zinc-800 flex items-center justify-center h-48">
-          <img
-            src={image}
-            alt={name}
-            className="w-full h-full object-contain rounded-md transition-transform duration-300 ease-in-out group-hover:scale-110"
-          />
+        <div className="group relative mb-4 rounded-md hover:shadow-2xl transition-shadow duration-300 ease-in-out">
+          <div className="overflow-hidden rounded-md bg-zinc-200 dark:bg-zinc-800 flex items-center justify-center h-48">
+            <img
+              src={image}
+              alt={name}
+              className="w-full h-full object-contain rounded-md transition-transform duration-300 ease-in-out group-hover:scale-110"
+            />
+          </div>
           {URL && (
             <a
               href={URL}
