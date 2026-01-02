@@ -1,25 +1,24 @@
 "use client";
 
-import type { Metadata } from "next";
 import dynamic from 'next/dynamic';
 import { useDeviceType } from '@/lib/hooks/useDeviceType';
 
-const ContactUsPageMobile = dynamic(() => import('./page.mobile'), {
+const ServicesCarouselMobile = dynamic(() => import('./ServicesCarousel.mobile'), {
   ssr: true,
 });
 
-const ContactUsPageDesktop = dynamic(() => import('./page.desktop'), {
+const ServicesCarouselDesktop = dynamic(() => import('./ServicesCarousel.desktop'), {
   ssr: false,
 });
 
-export default function ContactUsPage() {
+export default function ServicesCarousel() {
   const deviceType = useDeviceType();
 
   // SSR or mobile - show mobile version
   if (deviceType === null || deviceType === 'mobile') {
-    return <ContactUsPageMobile />;
+    return <ServicesCarouselMobile />;
   }
 
   // Desktop
-  return <ContactUsPageDesktop />;
+  return <ServicesCarouselDesktop />;
 }

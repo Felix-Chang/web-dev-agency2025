@@ -1,152 +1,24 @@
-import type { Metadata } from "next";
-import Link from "next/link";
-import Image from "next/image";
+"use client";
 
-export const metadata: Metadata = {
-  title: "About",
-  description: "Learn more about the founder and the agency",
-};
+import dynamic from 'next/dynamic';
+import { useDeviceType } from '@/lib/hooks/useDeviceType';
+
+const AboutMobile = dynamic(() => import('./page.mobile'), {
+  ssr: true,
+});
+
+const AboutDesktop = dynamic(() => import('./page.desktop'), {
+  ssr: false,
+});
 
 export default function About() {
-  return (
-    <div className="min-h-screen bg-[#F8F8FF] dark:bg-[1B1B1B] p-8">
-      <div className="max-w-6xl mx-auto">
-        <Link
-          href="/"
-          className="inline-block mb-8 text-zinc-600 dark:text-zinc-400 hover:text-black dark:hover:text-white transition-colors"
-        >
-          ← Back to Home
-        </Link>
+  const deviceType = useDeviceType();
 
-        <h1 className="text-5xl font-bold mb-6 text-black dark:text-zinc-50">
-          About
-        </h1>
+  // SSR or mobile - show mobile version
+  if (deviceType === null || deviceType === 'mobile') {
+    return <AboutMobile />;
+  }
 
-        {/* Main Content Section */}
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 my-12">
-          {/* Left: Image */}
-          <div className="flex justify-left">
-            <div className="w-full max-w-md aspect-square justify-center rounded-lg overflow-hidden bg-gradient-to-br from-zinc-300 to-zinc-400 dark:from-zinc-700 dark:to-zinc-800 flex items-center justify-center">
-              {/* Placeholder for person image */}
-              <span className="text-zinc-500 dark:text-zinc-400 text-lg">
-                Your Photo Here
-              </span>
-            </div>
-          </div>
-
-          {/* Right: Text Content */}
-          <div className="flex flex-col gap-6">
-            <p className="text-xl text-zinc-600 dark:text-zinc-400">
-              Hi, I'm Michael, the founder of "Our Agency".
-            </p>
-            <p className="text-xl text-zinc-700 dark:text-zinc-300">
-              With over 7 years of experience in professional web development
-              and design, I've helped many businesses transform their online
-              presence.
-            </p>
-            <p className="text-xl text-zinc-700 dark:text-zinc-300">
-              I started this agency because I believe every business deserves a
-              website that not only looks great but actually drives results.
-              Whether it's a sleek landing page or a complex full-stack
-              application, I'm passionate about building digital products that
-              make a difference.
-            </p>
-            <p className="text-xl text-zinc-700 dark:text-zinc-300">
-              I take a business-first approach to every project. That means
-              understanding your goals, your customers, and what success
-              actually looks like—not just writing code. I prioritize clear
-              communication, fast feedback, and transparency throughout the
-              process, and I'm always available to discuss ideas, updates, or
-              changes.
-            </p>
-            <p className="text-xl text-zinc-700 font-bold">Education</p>
-            <p className="text-xl text-zinc-700 dark:text-zinc-300">
-              B.S. in Computer Science | University of Southern California
-            </p>
-            <p className="text-xl text-zinc-700 dark:text-zinc-300">
-              M.S. in Artificial Intelligence | University of Texas at Austin
-            </p>
-          </div>
-        </div>
-
-        {/* Skills/Expertise Section */}
-        <div className="bg-white dark:bg-zinc-900 rounded-lg p-8 mb-12 border border-zinc-200 dark:border-zinc-800">
-          <h2 className="text-3xl font-bold mb-6 text-black dark:text-zinc-50">
-            My Expertise
-          </h2>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            <div className="flex flex-col gap-3">
-              <h3 className="text-xl font-bold text-black dark:text-zinc-50">
-                Frontend Development
-              </h3>
-              <p className="text-zinc-600 dark:text-zinc-400">
-                Creating beautiful, responsive interfaces with React, Next.js,
-                and modern CSS frameworks.
-              </p>
-              <div className="mt-4">
-                <Image
-                  src="/assets/undraw_programming_j1zw.png"
-                  alt="Programming illustration"
-                  width={300}
-                  height={300}
-                  className="w-full h-auto"
-                />
-              </div>
-            </div>
-            <div className="flex flex-col gap-3">
-              <h3 className="text-xl font-bold text-black dark:text-zinc-50">
-                Backend Systems
-              </h3>
-              <p className="text-zinc-600 dark:text-zinc-400">
-                Building robust APIs and server infrastructure that scales with
-                your business.
-              </p>
-              <div className="mt-4">
-                <Image
-                  src="/assets/undraw_add-post_prex.png"
-                  alt="Add post illustration"
-                  width={300}
-                  height={300}
-                  className="w-full h-auto"
-                />
-              </div>
-            </div>
-            <div className="flex flex-col gap-3">
-              <h3 className="text-xl font-bold text-black dark:text-zinc-50">
-                Full-Stack Solutions
-              </h3>
-              <p className="text-zinc-600 dark:text-zinc-400">
-                End-to-end development from concept to deployment and beyond.
-              </p>
-              <div className="mt-4">
-                <Image
-                  src="/assets/undraw_check-boxes_x5fg.png"
-                  alt="Check boxes illustration"
-                  width={300}
-                  height={300}
-                  className="w-full h-auto"
-                />
-              </div>
-            </div>
-          </div>
-        </div>
-
-        {/* CTA Section */}
-        <div className="mt-16 pt-12 pb-16 text-center">
-          <h2 className="text-3xl font-bold mb-4 text-black dark:text-zinc-50">
-            Ready to Work Together?
-          </h2>
-          <p className="text-lg text-zinc-600 dark:text-zinc-400 mb-8 max-w-2xl mx-auto">
-            Let's discuss your project and bring your vision to life.
-          </p>
-          <Link
-            href="/contact-us"
-            className="inline-block font-bold rounded-full bg-foreground px-6 py-2 text-background transition-colors hover:bg-[#383838] hover:underline dark:hover:bg-[#ccc]"
-          >
-            Get In Touch
-          </Link>
-        </div>
-      </div>
-    </div>
-  );
+  // Desktop
+  return <AboutDesktop />;
 }
