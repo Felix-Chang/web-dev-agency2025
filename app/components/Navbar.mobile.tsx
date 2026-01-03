@@ -4,7 +4,11 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useEffect, useState } from "react";
 
-export default function NavbarMobile() {
+type NavbarMobileProps = {
+  darkMode?: boolean;
+};
+
+export default function NavbarMobile({ darkMode }: NavbarMobileProps) {
   const [isVisible, setIsVisible] = useState(true);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const pathname = usePathname();
@@ -16,14 +20,19 @@ export default function NavbarMobile() {
 
   return (
     <header
-      className={`sticky top-0 z-50 bg-[#F8F8FF]/60  backdrop-blur-md transition-transform duration-500 ${
+      className={`sticky top-0 z-50 bg-[#F8F8FF]/60 backdrop-blur-md transition-transform duration-500 ${
         isVisible ? "translate-y-0" : "-translate-y-full"
       }`}
     >
       <nav className="px-4 py-3">
         <div className="mx-auto flex max-w-7xl items-center justify-between">
           {/* Logo / Brand */}
-          <Link href="/" className="text-sm font-bold">
+          <Link
+            href="/"
+            className={`text-sm font-bold ${
+              darkMode ? "text-background" : "text-foreground"
+            }`}
+          >
             Felix Web Studio
           </Link>
 
@@ -34,17 +43,23 @@ export default function NavbarMobile() {
             aria-label="Toggle menu"
           >
             <span
-              className={`h-0.5 w-full bg-foreground transition-all duration-300 ${
+              className={`h-0.5 w-full ${
+                darkMode ? "bg-background" : "bg-foreground"
+              } transition-all duration-300 ${
                 isMobileMenuOpen ? "rotate-45 translate-y-2" : ""
               }`}
             ></span>
             <span
-              className={`h-0.5 w-full bg-foreground transition-all duration-300 ${
+              className={`h-0.5 w-full ${
+                darkMode ? "bg-background" : "bg-foreground"
+              } transition-all duration-300 ${
                 isMobileMenuOpen ? "opacity-0" : ""
               }`}
             ></span>
             <span
-              className={`h-0.5 w-full bg-foreground transition-all duration-300 ${
+              className={`h-0.5 w-full ${
+                darkMode ? "bg-background" : "bg-foreground"
+              } transition-all duration-300 ${
                 isMobileMenuOpen ? "-rotate-45 -translate-y-2" : ""
               }`}
             ></span>
@@ -57,24 +72,30 @@ export default function NavbarMobile() {
             isMobileMenuOpen ? "max-h-64 mt-4" : "max-h-0"
           }`}
         >
-          <div className="flex flex-col gap-4 pb-4">
+          <div className="flex flex-col gap-4 pb-2">
             <Link
               href="/services"
-              className="font-bold hover:underline text-sm"
+              className={`font-bold ${
+                darkMode ? "text-background" : "text-foreground"
+              }hover:underline text-sm`}
               onClick={() => setIsMobileMenuOpen(false)}
             >
               Services
             </Link>
             <Link
               href="/clients"
-              className="font-bold hover:underline text-sm"
+              className={`font-bold ${
+                darkMode ? "text-background" : "text-foreground"
+              }hover:underline text-sm`}
               onClick={() => setIsMobileMenuOpen(false)}
             >
               Clients
             </Link>
             <Link
               href="/about"
-              className="font-bold hover:underline text-sm"
+              className={`font-bold ${
+                darkMode ? "text-background" : "text-foreground"
+              }hover:underline text-sm`}
               onClick={() => setIsMobileMenuOpen(false)}
             >
               About
