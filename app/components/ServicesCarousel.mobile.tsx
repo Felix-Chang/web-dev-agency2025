@@ -45,18 +45,18 @@ export default function ServicesCarouselMobile() {
         >
           {services.map((service) => (
             <div key={service.id} className="w-full flex-shrink-0 px-2">
-              <div className="bg-white dark:bg-zinc-900 rounded-xl p-6 border border-zinc-200 dark:border-zinc-800">
-                <h3 className="text-xl font-bold text-black dark:text-zinc-50 mb-2">
+              <div className="bg-white  rounded-xl p-6 border border-zinc-200 ">
+                <h3 className="text-xl font-bold text-black  mb-2">
                   {service.title}
                 </h3>
-                <p className="text-base font-semibold text-zinc-600 dark:text-zinc-400 mb-3">
+                <p className="text-base font-semibold text-zinc-600  mb-3">
                   {service.subtitle}
                 </p>
-                <p className="text-sm leading-6 text-zinc-600 dark:text-zinc-400 mb-4">
+                <p className="text-sm leading-6 text-zinc-600  mb-4">
                   {service.description}
                 </p>
                 {service.image && (
-                  <div className="rounded-lg overflow-hidden bg-zinc-200 dark:bg-zinc-800 flex items-center justify-center p-4 h-48">
+                  <div className="rounded-lg overflow-hidden bg-zinc-200  flex items-center justify-center p-4 h-48">
                     <Image
                       src={service.image}
                       alt={service.title}
@@ -80,8 +80,8 @@ export default function ServicesCarouselMobile() {
             onClick={() => setActiveIndex(index)}
             className={`w-3 h-3 rounded-full transition-all ${
               index === activeIndex
-                ? "bg-black dark:bg-white w-10"
-                : "bg-zinc-300 dark:bg-zinc-700"
+                ? "bg-black  w-10"
+                : "bg-zinc-300 "
             }`}
             aria-label={`Go to slide ${index + 1}`}
           />
