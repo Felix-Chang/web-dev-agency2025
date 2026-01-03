@@ -18,7 +18,7 @@ export default function Navbar() {
   const isAfter6pm = useDarkMode();
   // SSR or mobile - show mobile version
   if (deviceType === null || deviceType === "mobile") {
-    return <NavbarMobile />;
+    return <NavbarMobile darkMode={isAfter6pm} />;
   }
 
   // Desktop
