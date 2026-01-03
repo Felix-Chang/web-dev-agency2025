@@ -43,7 +43,7 @@ export default function ServicesCarouselDesktop() {
               prev === 0 ? services.length - 1 : prev - 1
             )
           }
-          className="flex-shrink-0 w-12 h-12 rounded-full bg-zinc-100 dark:bg-zinc-800 hover:bg-zinc-200 dark:hover:bg-zinc-700 transition-colors flex items-center justify-center text-xl"
+          className="flex-shrink-0 w-12 h-12 rounded-full bg-zinc-100  hover:bg-zinc-200  transition-colors flex items-center justify-center text-xl"
           aria-label="Previous slide"
         >
           ←
@@ -60,19 +60,19 @@ export default function ServicesCarouselDesktop() {
           >
             {services.map((service) => (
               <div key={service.id} className="w-full flex-shrink-0 px-4">
-                <div className="bg-white dark:bg-zinc-900 rounded-2xl p-8 border border-zinc-200 dark:border-zinc-800 min-h-[540px] flex flex-col">
-                  <h3 className="text-2xl font-bold text-black dark:text-zinc-50 mb-2">
+                <div className="bg-white  rounded-2xl p-8 border border-zinc-200  min-h-[540px] flex flex-col">
+                  <h3 className="text-2xl font-bold text-black  mb-2">
                     {service.title}
                   </h3>
-                  <p className="text-lg font-semibold text-zinc-600 dark:text-zinc-400 mb-4">
+                  <p className="text-lg font-semibold text-zinc-600  mb-4">
                     {service.subtitle}
                   </p>
-                  <p className="flex-grow text-base leading-7 text-zinc-600 dark:text-zinc-400">
+                  <p className="flex-grow text-base leading-7 text-zinc-600 ">
                     {service.description}
                   </p>
                   {service.image && (
                     <div className="flex justify-center m-4">
-                      <div className="rounded-lg overflow-hidden max-w-lg bg-zinc-200 dark:bg-zinc-800 flex items-center justify-center p-8 h-80">
+                      <div className="rounded-lg overflow-hidden max-w-lg bg-zinc-200  flex items-center justify-center p-8 h-80">
                         <Image
                           src={service.image}
                           alt={service.title}
@@ -96,7 +96,7 @@ export default function ServicesCarouselDesktop() {
               prev === services.length - 1 ? 0 : prev + 1
             )
           }
-          className="flex-shrink-0 w-12 h-12 rounded-full bg-zinc-100 dark:bg-zinc-800 hover:bg-zinc-200 dark:hover:bg-zinc-700 transition-colors flex items-center justify-center text-xl"
+          className="flex-shrink-0 w-12 h-12 rounded-full bg-zinc-100  hover:bg-zinc-200  transition-colors flex items-center justify-center text-xl"
           aria-label="Next slide"
         >
           →
@@ -111,8 +111,8 @@ export default function ServicesCarouselDesktop() {
             onClick={() => setActiveIndex(index)}
             className={`w-2 h-2 rounded-full transition-all ${
               index === activeIndex
-                ? "bg-black dark:bg-white w-8"
-                : "bg-zinc-300 dark:bg-zinc-700"
+                ? "bg-black  w-8"
+                : "bg-zinc-300 "
             }`}
             aria-label={`Go to slide ${index + 1}`}
           />

@@ -30,7 +30,7 @@ export default function NavbarMobile() {
 
   return (
     <header
-      className={`sticky top-0 z-50 bg-[#F8F8FF]/60 dark:bg-[1B1B1B]/60 backdrop-blur-md transition-transform duration-500 ${
+      className={`sticky top-0 z-50 bg-[#F8F8FF]/60  backdrop-blur-md transition-transform duration-500 ${
         isVisible ? "translate-y-0" : "-translate-y-full"
       }`}
     >
@@ -95,7 +95,7 @@ export default function NavbarMobile() {
             </Link>
             <Link
               href="/contact-us"
-              className="font-bold rounded-full bg-foreground px-5 py-2 text-sm text-background transition-colors hover:bg-[#383838] hover:underline dark:hover:bg-[#ccc] text-center"
+              className="font-bold rounded-full bg-foreground px-5 py-2 text-sm text-background transition-colors hover:bg-[#383838] hover:underline  text-center"
               onClick={() => setIsMobileMenuOpen(false)}
             >
               Contact Us
