@@ -18,8 +18,6 @@ export interface RateLimitResult {
 export async function getClientIP(): Promise<string | null> {
   const headersList = await headers();
 
-  console.log('🌐 All headers:', Object.fromEntries(headersList.entries()));
-
   const ipSources = [
     headersList.get('x-real-ip'),
     headersList.get('x-forwarded-for'),
@@ -28,8 +26,6 @@ export async function getClientIP(): Promise<string | null> {
     headersList.get('forwarded'),
   ];
 
-  console.log('🔍 IP sources:', ipSources);
-
   for (const ip of ipSources) {
     if (ip) {
       let cleanedIP = ip.split(',')[0].trim();
@@ -37,17 +33,14 @@ export async function getClientIP(): Promise<string | null> {
       // Handle IPv4-mapped IPv6 addresses (::ffff:127.0.0.1)
       if (cleanedIP.startsWith('::ffff:')) {
         cleanedIP = cleanedIP.substring(7); // Remove ::ffff: prefix
-        console.log('🔄 Converted IPv4-mapped IPv6 to IPv4:', cleanedIP);
       }
 
-      console.log('🧹 Cleaned IP:', cleanedIP, 'Valid:', isValidIP(cleanedIP));
       if (isValidIP(cleanedIP)) {
         return cleanedIP;
       }
     }
   }
 
-  console.log('⚠️ No valid IP found in headers');
   return null;
 }
 
@@ -71,8 +64,6 @@ export async function checkRateLimit(ip: string): Promise<RateLimitResult> {
   const now = new Date();
   const windowStart = new Date(now.getTime() - RATE_LIMIT_WINDOW_HOURS * 60 * 60 * 1000);
 
-  console.log('🔎 checkRateLimit - IP:', ip, 'Window start:', windowStart.toISOString());
-
   try {
     const { data, error } = await supabase
       .from('rate_limit_tracking')
@@ -81,10 +72,8 @@ export async function checkRateLimit(ip: string): Promise<RateLimitResult> {
       .gte('first_attempt_at', windowStart.toISOString())
       .single();
 
-    console.log('📥 Query result - data:', data, 'error:', error);
-
     if (error && error.code !== 'PGRST116') {
-      console.error('❌ Rate limit check error:', error);
+      console.error('Rate limit check error:', error);
       // Fail open: allow submission if check fails
       return {
         allowed: true,
@@ -95,7 +84,6 @@ export async function checkRateLimit(ip: string): Promise<RateLimitResult> {
     }
 
     if (!data) {
-      console.log('ℹ️ No existing record found - allowing (first request)');
       return {
         allowed: true,
         remainingRequests: MAX_REQUESTS_PER_WINDOW - 1,
@@ -103,8 +91,6 @@ export async function checkRateLimit(ip: string): Promise<RateLimitResult> {
         retryAfterMinutes: null,
       };
     }
-
-    console.log('📊 Found record - attempt_count:', data.attempt_count);
 
     if (data.attempt_count >= MAX_REQUESTS_PER_WINDOW) {
       const resetTime = new Date(
@@ -149,35 +135,23 @@ export async function recordAttempt(ip: string): Promise<void> {
   const now = new Date();
   const windowStart = new Date(now.getTime() - RATE_LIMIT_WINDOW_HOURS * 60 * 60 * 1000);
 
-  console.log('💾 recordAttempt - IP:', ip);
-
-  const { data: existing, error: queryError } = await supabase
+  const { data: existing } = await supabase
     .from('rate_limit_tracking')
     .select('*')
     .eq('ip_address', ip)
     .gte('first_attempt_at', windowStart.toISOString())
     .single();
 
-  console.log('📥 Existing record:', existing, 'error:', queryError);
-
   if (existing) {
-    console.log('🔄 Updating existing record - new count:', existing.attempt_count + 1);
-    const { error: updateError } = await supabase
+    await supabase
       .from('rate_limit_tracking')
       .update({
         attempt_count: existing.attempt_count + 1,
         last_attempt_at: now.toISOString(),
       })
       .eq('id', existing.id);
-
-    if (updateError) {
-      console.error('❌ Update error:', updateError);
-    } else {
-      console.log('✅ Record updated successfully');
-    }
   } else {
-    console.log('➕ Creating new record');
-    const { error: insertError } = await supabase
+    await supabase
       .from('rate_limit_tracking')
       .insert({
         ip_address: ip,
@@ -185,12 +159,6 @@ export async function recordAttempt(ip: string): Promise<void> {
         first_attempt_at: now.toISOString(),
         last_attempt_at: now.toISOString(),
       });
-
-    if (insertError) {
-      console.error('❌ Insert error:', insertError);
-    } else {
-      console.log('✅ New record created');
-    }
   }
 
   // Periodic cleanup (every 100 submissions)
