@@ -1,5 +1,5 @@
 import Link from "next/link";
-import ContactForm from "../components/ContactForm";
+import ContactForm from "@/components/ContactForm";
 
 export default function ContactUsPageDesktop() {
   return (
