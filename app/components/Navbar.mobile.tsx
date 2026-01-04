@@ -20,7 +20,9 @@ export default function NavbarMobile({ darkMode }: NavbarMobileProps) {
 
   return (
     <header
-      className={`sticky top-0 z-50 bg-[#F8F8FF]/60 backdrop-blur-md transition-transform duration-500 ${
+      className={`sticky top-0 z-50 ${
+        darkMode ? "bg-foreground/60" : "bg-background/60"
+      } backdrop-blur-md transition-transform duration-500 ${
         isVisible ? "translate-y-0" : "-translate-y-full"
       }`}
     >
@@ -77,7 +79,7 @@ export default function NavbarMobile({ darkMode }: NavbarMobileProps) {
               href="/services"
               className={`font-bold ${
                 darkMode ? "text-background" : "text-foreground"
-              }hover:underline text-sm`}
+              } hover:underline text-sm`}
               onClick={() => setIsMobileMenuOpen(false)}
             >
               Services
@@ -86,7 +88,7 @@ export default function NavbarMobile({ darkMode }: NavbarMobileProps) {
               href="/clients"
               className={`font-bold ${
                 darkMode ? "text-background" : "text-foreground"
-              }hover:underline text-sm`}
+              } hover:underline text-sm`}
               onClick={() => setIsMobileMenuOpen(false)}
             >
               Clients
@@ -95,14 +97,18 @@ export default function NavbarMobile({ darkMode }: NavbarMobileProps) {
               href="/about"
               className={`font-bold ${
                 darkMode ? "text-background" : "text-foreground"
-              }hover:underline text-sm`}
+              } hover:underline text-sm`}
               onClick={() => setIsMobileMenuOpen(false)}
             >
               About
             </Link>
             <Link
               href="/contact-us"
-              className="font-bold rounded-full bg-foreground px-5 py-2 text-sm text-background transition-colors hover:bg-[#383838] hover:underline  text-center"
+              className={`font-bold rounded-full ${
+                darkMode ? "bg-background" : "bg-foreground"
+              } px-5 py-2 text-sm ${
+                darkMode ? "text-foreground" : "text-background"
+              } transition-colors hover:bg-[#383838] hover:underline  text-center`}
               onClick={() => setIsMobileMenuOpen(false)}
             >
               Contact Us
