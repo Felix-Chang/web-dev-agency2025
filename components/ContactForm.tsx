@@ -1,7 +1,7 @@
 'use client';
 
 import { useState } from 'react';
-import { submitContactForm } from '../actions/contact';
+import { submitContactForm } from '@/app/actions/contact';
 import { Button } from "@/components/ui/button";
 import {
   Field,

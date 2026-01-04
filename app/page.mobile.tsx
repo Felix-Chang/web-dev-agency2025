@@ -1,6 +1,6 @@
 import Link from "next/link";
-import BuildLaunchScale from "./components/buildLaunchScale";
-import ServicesCarousel from "./components/ServicesCarousel";
+import BuildLaunchScale from "@/components/buildLaunchScale";
+import ServicesCarousel from "@/components/ServicesCarousel";
 
 export default function HomeMobile() {
   return (

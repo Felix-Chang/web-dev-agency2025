@@ -1,6 +1,6 @@
 import Link from "next/link";
 import Image from "next/image";
-import ClientCard from "../components/ClientCard";
+import ClientCard from "@/components/ClientCard";
 
 const clients = [
   {
