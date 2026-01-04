@@ -36,8 +36,8 @@ export default function NavbarDesktop({ darkMode }: NavbarDesktopProps) {
   return (
     <header
       className={`sticky top-0 z-50 ${
-        darkMode ? "bg-foreground" : "bg-background"
-      }/60  backdrop-blur-md transition-transform duration-500 ${
+        darkMode ? "bg-foreground/60" : "bg-background/60"
+      }  backdrop-blur-md transition-transform duration-500 ${
         isVisible ? "translate-y-0" : "-translate-y-full"
       }`}
     >
