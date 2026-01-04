@@ -5,11 +5,11 @@ import { useDeviceType } from "@/lib/hooks/useDeviceType";
 import { useDarkMode } from "@/lib/hooks/useDarkMode";
 import { useState } from "react";
 
-const NavbarMobile = dynamic(() => import("./Navbar.mobile"), {
+const NavbarMobile = dynamic(() => import("@/app/components/Navbar.mobile"), {
   ssr: true,
 });
 
-const NavbarDesktop = dynamic(() => import("./Navbar.desktop"), {
+const NavbarDesktop = dynamic(() => import("@/app/components/Navbar.desktop"), {
   ssr: false,
 });
 
